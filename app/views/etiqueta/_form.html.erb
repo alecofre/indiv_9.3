@@ -17,8 +17,8 @@
   </div>
 
   <div>
-    <%= form.label :publicacion_id, style: "display: block" %>
-    <%= form.collection_select :publicacion_id, @publicacions, :id, :titulo %>
+    <%= form.label :publicacion_ids, style: "display: block" %>
+    <%= form.collection_check_boxes :publicacion_ids, @publicacions, :id, :titulo %>
   </div>
 
   <div>

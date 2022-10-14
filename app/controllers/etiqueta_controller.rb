@@ -4,6 +4,7 @@ class EtiquetaController < ApplicationController
   # GET /etiqueta or /etiqueta.json
   def index
     @etiqueta = Etiquetum.all
+    @publicacions = Publicacion.all
   end
 
   # GET /etiqueta/1 or /etiqueta/1.json
@@ -66,6 +67,6 @@ class EtiquetaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def etiquetum_params
-      params.require(:etiquetum).permit(:nombre, :publicacion_id)
+      params.require(:etiquetum).permit(:nombre, publicacion_ids: [] )
     end
 end

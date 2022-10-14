@@ -18,6 +18,7 @@ class PublicacionsController < ApplicationController
 
   # GET /publicacions/1/edit
   def edit
+    @etiqueta = Etiquetum.all
   end
 
   # POST /publicacions or /publicacions.json
@@ -66,6 +67,6 @@ class PublicacionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def publicacion_params
-      params.require(:publicacion).permit(:titulo, :usuario_id, etiqueta_attributes: [:nombre])
+      params.require(:publicacion).permit(:titulo, :usuario_id, etiquetum_ids: [])
     end
 end

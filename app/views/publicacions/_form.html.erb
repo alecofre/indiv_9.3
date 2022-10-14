@@ -18,7 +18,7 @@
   <div>
   <p>Etiquetas</p>
    <%= form.label :etiqueta %>
-    <%= form.collection_check_boxes :etiquetum_ids, etiqueta, :id, :nombre %>
+    <%= form.collection_check_boxes :etiquetum_ids, @etiqueta, :id, :nombre %>
   </div>
   <div>
     <%= form.hidden_field :usuario_id, value:current_usuario.id %>

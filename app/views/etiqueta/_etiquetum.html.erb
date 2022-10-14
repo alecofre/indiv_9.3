@@ -6,7 +6,9 @@
 
   <p>
     <strong>Publicacion:</strong>
-    <%= etiquetum.publicacion.titulo %>
+    <% etiquetum.publicacion.each do |e| %>
+    <%= e.titulo %>
+    <% end %>
   </p>
 
 </div>
