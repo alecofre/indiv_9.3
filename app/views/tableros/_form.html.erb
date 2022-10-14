@@ -18,12 +18,11 @@
 
   <div>
     <%= form.label :publicacion_id, style: "display: block" %>
-    <%= form.text_field :publicacion_id %>
+    <%= form.collection_select :publicacion_id, @publicacions, :id, :titulo %>
   </div>
 
   <div>
-    <%= form.label :usuario_id, style: "display: block" %>
-    <%= form.text_field :usuario_id %>
+    <%= form.hidden_field :usuario_id, value:current_usuario.id %>
   </div>
 
   <div>

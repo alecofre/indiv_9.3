@@ -13,10 +13,12 @@ class TablerosController < ApplicationController
   # GET /tableros/new
   def new
     @tablero = Tablero.new
+    @publicacions = Publicacion.all
   end
 
   # GET /tableros/1/edit
   def edit
+    @publicacions = Publicacion.all
   end
 
   # POST /tableros or /tableros.json

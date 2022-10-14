@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_14_015515) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_022556) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_015515) do
     t.index ["usuario_id"], name: "index_publicacions_on_usuario_id"
   end
 
+  create_table "tableros", force: :cascade do |t|
+    t.date "fecha"
+    t.bigint "publicacion_id", null: false
+    t.bigint "usuario_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["publicacion_id"], name: "index_tableros_on_publicacion_id"
+    t.index ["usuario_id"], name: "index_tableros_on_usuario_id"
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -46,4 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_015515) do
   end
 
   add_foreign_key "publicacions", "usuarios"
+  add_foreign_key "tableros", "publicacions"
+  add_foreign_key "tableros", "usuarios"
 end
