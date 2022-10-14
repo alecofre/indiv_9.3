@@ -19,6 +19,7 @@ class EtiquetaController < ApplicationController
 
   # GET /etiqueta/1/edit
   def edit
+    @publicacions = Publicacion.all
   end
 
   # POST /etiqueta or /etiqueta.json
