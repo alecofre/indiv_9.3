@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tableros
   get 'usuarios/:id/publicacions', to: "usuarios#mostrar"
   devise_for :usuarios
   resources :etiqueta
